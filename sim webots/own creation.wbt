@@ -1,0 +1,656 @@
+#VRML_SIM R2020a utf8
+WorldInfo {
+  info [
+    "The model of the E-puck robot"
+  ]
+  title "E-puck simulation"
+}
+Viewpoint {
+  orientation 0.18948320020216114 -0.9621355871490204 -0.19593679792871435 4.709892700498435
+  position 1.7097923649701272 0.5000813461889317 0.8379239972502549
+  follow "robot"
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorSize 2 2
+}
+DEF left Solid {
+  translation 0.45 0.05 0.4
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF left Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/left.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "left"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+}
+DEF left45 Solid {
+  translation 0.180503 0.05 -0.350503
+  rotation 0 -1 0 0.785397
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF left Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/left45.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "left45"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(4)"
+}
+DEF left135 Solid {
+  translation 0.919498 0.05 0.169794
+  rotation 0 1 0 3.14159
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF left Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/left135.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "left135"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(2)"
+}
+Robot {
+  translation 0.867381 0.0395208 0.794923
+  rotation 0.003599921768076068 -0.999987023898124 0.003604524744852117 1.5708130186126765
+  children [
+    DEF Body Shape {
+      appearance PBRAppearance {
+        baseColor 0.282353 0.282353 0.282353
+        metalness 0
+      }
+      geometry Box {
+        size 0.1 0.05 0.2
+      }
+    }
+    DEF cam_holder Solid {
+      translation 0 0.03 0.08
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 1 0 0
+            metalness 0
+          }
+          geometry Box {
+            size 0.02 0.02 0.02
+          }
+        }
+        DEF rm HingeJoint {
+          jointParameters HingeJointParameters {
+            axis 0 1 0
+            anchor 0 0.02 0
+          }
+          device [
+            RotationalMotor {
+              name "RM"
+            }
+          ]
+          endPoint Solid {
+            translation 0 0.02 0
+            rotation 1 5.887835906459638e-17 -5.887835906459638e-17 1.5707999999999998
+            children [
+              Shape {
+                appearance PBRAppearance {
+                  metalness 0
+                }
+                geometry Cylinder {
+                  height 0.02
+                  radius 0.01
+                }
+              }
+              Camera {
+                translation 0 0.01 0
+                rotation 3.3905113482557537e-09 -0.707108281185553 0.70710528118436 3.14159
+                width 1080
+                height 1080
+                recognition Recognition {
+                  frameColor 0.615686 1 0
+                  frameThickness 20
+                }
+              }
+            ]
+          }
+        }
+      ]
+      name "solid(5)"
+    }
+    Solid {
+      translation -3.6e-07 0 0.09
+      rotation 0 1 0 1.5708
+      children [
+        Shape {
+          appearance PBRAppearance {
+            baseColor 0.239216 0.239216 0.239216
+            metalness 0
+          }
+          geometry TexturedParallelepiped {
+            size 0.07 0.07 0.1
+          }
+        }
+      ]
+      name "solid(4)"
+      boundingObject USE Body
+      physics Physics {
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -12.537612475085957
+        anchor 0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "left wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.059999999992422115 9.85341891771985e-07 0.049998767687395564
+        rotation -0.012885123391864949 0.012874869614368407 -0.9998340919010462 4.713019149853941
+        children [
+          DEF wheel Shape {
+            appearance PBRAppearance {
+              baseColor 0.984314 1 0.0117647
+              metalness 0
+            }
+            geometry Cylinder {
+              height 0.02
+              radius 0.04
+            }
+          }
+        ]
+        boundingObject USE wheel
+        physics DEF physics_wh Physics {
+        }
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -10.502420882048831
+        anchor -0.06 0 0.05
+      }
+      device [
+        RotationalMotor {
+          name "right wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.06000000000757777 9.853418933760824e-07 0.049998767687390956
+        rotation -0.651264763815332 0.6507461973389984 -0.39036341281092546 3.88647541405813
+        children [
+          USE wheel
+        ]
+        name "solid(1)"
+        boundingObject USE wheel
+        physics USE physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -12.537569064360609
+        anchor 0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "left wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation 0.060000000073136106 -1.753971235098187e-07 -0.05000001179968789
+        rotation 0.01440970880798308 -0.014398242038772135 0.9997925039318218 1.5702077545053703
+        children [
+          USE wheel
+        ]
+        name "solid(2)"
+        boundingObject USE wheel
+        physics USE physics_wh
+      }
+    }
+    HingeJoint {
+      jointParameters HingeJointParameters {
+        position -10.502379901351219
+        anchor -0.06 0 -0.05
+      }
+      device [
+        RotationalMotor {
+          name "right wheel motor"
+        }
+      ]
+      endPoint Solid {
+        translation -0.05999999992111271 -1.6396258419867404e-07 -0.05000001052554393
+        rotation 0.6516068210857878 -0.6510879826819139 0.3892210034436348 2.398694512262261
+        children [
+          USE wheel
+        ]
+        name "solid(3)"
+        boundingObject USE wheel
+        physics USE physics_wh
+      }
+    }
+  ]
+  boundingObject USE Body
+  physics Physics {
+  }
+  controller "v2"
+}
+DEF right Solid {
+  translation 0.21 0.05 0.81
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/right.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "right"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+}
+DEF right Solid {
+  translation -0.87 0.05 -0.17
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/right.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "right"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(5)"
+}
+DEF right Solid {
+  translation -0.39 0.05 -0.92
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/right.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "right"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(7)"
+}
+DEF stop Solid {
+  translation 0.96 0.05 -0.65
+  rotation 0 1 0 3.14159
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/stop.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "stop"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(8)"
+}
+DEF uright Solid {
+  translation -0.61 0.05 -0.92
+  rotation 0 1 0 -1.5707953071795862
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/rightu.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "uright"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(6)"
+}
+DEF uleft Solid {
+  translation -0.5 0.05 0.97
+  rotation 0 1 0 1.5708
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/leftu.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "uleft"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(9)"
+}
+DEF right45 Solid {
+  translation 0.0452671 0.05 -0.0204139
+  rotation 0 -1 0 2.3562
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/right45.png"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "right45"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(3)"
+}
+DEF right135 Solid {
+  translation -0.83 0.05 0.64
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 1 0 0
+        metalness 0
+      }
+      geometry Box {
+        size 0.02 0.1 0.1
+      }
+    }
+    Solid {
+      translation 0.01 0 0
+      children [
+        DEF right Shape {
+          appearance PBRAppearance {
+            baseColorMap ImageTexture {
+              url [
+                "D:/pro/MFAR/sem 7/Webots/tag navigation/sim webots/right135.jpg"
+              ]
+            }
+            metalness 0
+          }
+          geometry Box {
+            size 0.01 0.1 0.1
+          }
+        }
+      ]
+      model "right135"
+      description "right"
+      boundingObject Box {
+        size 0.005 0.09 0.09
+      }
+      recognitionColors [
+        1 0 0
+      ]
+    }
+  ]
+  name "solid(1)"
+}
